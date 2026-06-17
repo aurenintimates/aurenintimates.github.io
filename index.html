@@ -1061,8 +1061,7 @@ footer {
         <textarea name="message" placeholder="Tell us about your project — quantities, colors, customization needs..." rows="5"></textarea>
         <button type="submit">Send Inquiry</button>
       </form>
-      <div id="formStatus" style="display:none; margin-top:1rem; padding:1rem; border-radius:4px;"></div>
-      <div id="formStatus" style="display:none; margin-top:1rem; padding:1rem; border-radius:4px;"></div>
+      <div id="formStatus" style="display:none; margin-top:1rem; padding:1rem; border-radius:6px; text-align:center;"></div>
     </div>
   </div>
 </section>
@@ -1164,25 +1163,28 @@ function submitInquiry(event) {
   var product = form.querySelector('[name="product"]').value || 'N/A';
   var msg = form.querySelector('[name="message"]').value || 'N/A';
 
+  var subject = encodeURIComponent('New Inquiry from AUREN Website - ' + name);
+  var body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n' +
+    'Company: ' + company + '\n' +
+    'Product Interest: ' + product + '\n' +
+    'Message:\n' + msg
+  );
+  var mailtoUrl = 'mailto:hello@aurenintimates.com?subject=' + subject + '&body=' + body;
+
   var status = document.getElementById('formStatus');
   status.style.display = 'block';
   status.style.background = '#d4edda';
   status.style.color = '#155724';
-  status.innerHTML = '<strong>Thank you ' + name + '!</strong><br>Your inquiry has been submitted successfully.<br>We will reply to <strong>' + email + '</strong> within 24 hours.';
+  status.innerHTML =
+    '<strong>Thank you ' + name + '!</strong><br>' +
+    'Your inquiry has been submitted successfully.<br>' +
+    'We will reply to <strong>' + email + '</strong> within 24 hours.<br><br>' +
+    '<a href="' + mailtoUrl + '" style="display:inline-block;background:#c9a96e;color:#fff;padding:12px 28px;border-radius:6px;text-decoration:none;font-weight:600;font-size:1rem;">📧 Send Email Now</a>' +
+    '<br><br><small style="color:#666;">Click the button above to open your email app and send the inquiry.</small>';
 
   form.reset();
-
-  setTimeout(function() {
-    var subject = encodeURIComponent('New Inquiry from AUREN Website - ' + name);
-    var body = encodeURIComponent(
-      'Name: ' + name + '\n' +
-      'Email: ' + email + '\n' +
-      'Company: ' + company + '\n' +
-      'Product Interest: ' + product + '\n' +
-      'Message:\n' + msg
-    );
-    window.location.href = 'mailto:hello@aurenintimates.com?subject=' + subject + '&body=' + body;
-  }, 800);
 }
 </script>
 
