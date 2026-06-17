@@ -1012,10 +1012,13 @@ footer {
   <div class="divider" style="margin-left:0;"></div>
   <div class="contact-grid">
     <div class="contact-info">
-      <div class="item">
-        <div class="label">Email</div>
-        <div class="value">hello@aurenintimates.com</div>
+      <!-- 明显的邮箱提示 -->
+      <div style="background: #f8f8f8; border-left: 4px solid #c9a96e; padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 6px 6px 0;">
+        <div style="font-size: 0.85rem; color: #c9a96e; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 0.5rem; text-transform: uppercase;">📧 Envíenos un correo directamente</div>
+        <a href="mailto:hello@aurenintimates.com" style="font-size: 1.3rem; color: #1a1a1a; font-weight: 700; text-decoration: none; word-break: break-all; display: inline-block; margin-bottom: 0.3rem;">hello@aurenintimates.com</a>
+        <div style="font-size: 0.85rem; color: #666;">Normalmente respondemos dentro de 24 horas</div>
       </div>
+
       <div class="item">
         <div class="label">WhatsApp</div>
         <div class="value">+86 XXX XXXX XXXX</div>
@@ -1030,7 +1033,11 @@ footer {
       </div>
     </div>
     <div class="contact-form">
-                              <form id="inquiryForm" onsubmit="submitInquiry(event)">
+      <div style="background: #f8f8f8; padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; font-size: 0.9rem; color: #666; line-height: 1.6;">
+        <strong style="color: #333;">¿Prefiere utilizar el formulario?</strong><br>
+        Rellene el formulario a continuación y recibiremos su consulta inmediatamente. También puede enviarnos un correo directamente a <a href="mailto:hello@aurenintimates.com" style="color: #c9a96e; font-weight: 600;">hello@aurenintimates.com</a>
+      </div>
+      <form id="inquiryForm" onsubmit="submitInquiry(event)">
         <input type="text" name="name" placeholder="Su Nombre *" required>
         <input type="email" name="email" placeholder="Su E-mail *" required>
         <input type="text" name="company" placeholder="Nombre de la Empresa">
