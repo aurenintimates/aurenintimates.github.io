@@ -1010,15 +1010,17 @@ footer {
   <div class="section-label">Entrer en Contact</div>
   <h2>Construisons Votre<br>Collection Ensemble</h2>
   <div class="divider" style="margin-left:0;"></div>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <!-- 明显的邮箱提示 -->
-      <div style="background: #f8f8f8; border-left: 4px solid #c9a96e; padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 6px 6px 0;">
-        <div style="font-size: 0.85rem; color: #c9a96e; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 0.5rem; text-transform: uppercase;">📧 Nous écrire directement</div>
-        <a href="mailto:hello@aurenintimates.com" style="font-size: 1.3rem; color: #1a1a1a; font-weight: 700; text-decoration: none; word-break: break-all; display: inline-block; margin-bottom: 0.3rem;">hello@aurenintimates.com</a>
-        <div style="font-size: 0.85rem; color: #666;">Nous répondons généralement sous 24 heures</div>
-      </div>
 
+  <!-- Simplified contact - form removed -->
+  <div style="max-width: 600px; margin:0 auto; text-align: center;">
+    <!-- 明显的邮箱提示 -->
+    <div style="background: #f8f8f8; border: 2px solid #c9a96e; padding: 2rem; margin-bottom: 2rem; border-radius: 6px;">
+      <div style="font-size: 0.9rem; color: #c9a96e; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 0.8rem; text-transform: uppercase;">📧 Envoyez-nous un e-mail directement</div>
+      <a href="mailto:hello@aurenintimates.com" style="font-size: 1.5rem; color: #1a1a1a; font-weight: 700; text-decoration: none; word-break: break-all; display: inline-block; margin-bottom: 0.5rem;">hello@aurenintimates.com</a>
+      <div style="font-size: 0.9rem; color: #666; margin-top: 0.8rem;">Nous répondons généralement sous 24 heures</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left; margin-top: 2rem;">
       <div class="item">
         <div class="label">WhatsApp</div>
         <div class="value">+86 XXX XXXX XXXX</div>
@@ -1027,25 +1029,10 @@ footer {
         <div class="label">Heures de Bureau</div>
         <div class="value">Lun – Ven · 9:00 – 18:00 (GMT+8)</div>
       </div>
-      <div class="item">
+      <div class="item" style="grid-column: 1 / -1;">
         <div class="label">Temps de Réponse</div>
         <div class="value">Dans les 24 heures</div>
       </div>
-    </div>
-    <div class="contact-form">
-      <div style="background: #f8f8f8; padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; font-size: 0.9rem; color: #666; line-height: 1.6;">
-        <strong style="color: #333;">Préférez-vous utiliser le formulaire?</strong><br>
-        Remplissez le formulaire ci-dessous et nous recevrons votre demande immédiatement. Vous pouvez également nous écrire directement à <a href="mailto:hello@aurenintimates.com" style="color: #c9a96e; font-weight: 600;">hello@aurenintimates.com</a>
-      </div>
-      <form id="inquiryForm" onsubmit="submitInquiry(event)">
-        <input type="text" name="name" placeholder="Votre Nom *" required>
-        <input type="email" name="email" placeholder="Votre E-mail *" required>
-        <input type="text" name="company" placeholder="Nom de l'entreprise">
-        <input type="text" name="product" placeholder="Produit d'intérêt (ex. Style #9802)">
-        <textarea name="message" placeholder="Parlez-nous de votre projet — quantités, couleurs, personnalisation..." rows="5"></textarea>
-        <button type="submit">Envoyer la Demande</button>
-      </form>
-      <div id="formStatus" style="display:none; margin-top:1rem; padding:1rem; border-radius:6px; text-align:center;"></div>
     </div>
   </div>
 </section>
