@@ -980,11 +980,7 @@ footer {
       </div>
     </div>
     <div class="contact-form">
-                        <form action="https://formsubmit.co/hello@aurenintimates.com" method="POST">
-        <input type="hidden" name="_subject" value="🆕 New Inquiry from AUREN Website">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://aurenintimates.github.io/">
+                              <form id="inquiryForm" onsubmit="submitInquiry(event)">
         <input type="text" name="name" placeholder="Your Name *" required>
         <input type="email" name="email" placeholder="Your Email *" required>
         <input type="text" name="company" placeholder="Company Name">
