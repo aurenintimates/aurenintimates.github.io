@@ -1031,15 +1031,14 @@ footer {
     </div>
     <div class="contact-form">
                               <form id="inquiryForm" onsubmit="submitInquiry(event)">
-        <input type="text" name="name" placeholder="Your Name *" required>
-        <input type="email" name="email" placeholder="Your Email *" required>
-        <input type="text" name="company" placeholder="Company Name">
-        <input type="text" name="product" placeholder="Product Interest (e.g. Style #9802)">
-        <textarea name="message" placeholder="Tell us about your project — quantities, colors, customization needs..." rows="5"></textarea>
-        <button type="submit">Send Inquiry</button>
+        <input type="text" name="name" placeholder="Votre Nom *" required>
+        <input type="email" name="email" placeholder="Votre E-mail *" required>
+        <input type="text" name="company" placeholder="Nom de l'entreprise">
+        <input type="text" name="product" placeholder="Produit d'intérêt (ex. Style #9802)">
+        <textarea name="message" placeholder="Parlez-nous de votre projet — quantités, couleurs, personnalisation..." rows="5"></textarea>
+        <button type="submit">Envoyer la Demande</button>
       </form>
-      <div id="formStatus" style="display:none; margin-top:1rem; padding:1rem; border-radius:4px;"></div>
-      <div id="formStatus" style="display:none; margin-top:1rem; padding:1rem; border-radius:4px;"></div>
+      <div id="formStatus" style="display:none; margin-top:1rem; padding:1rem; border-radius:6px; text-align:center;"></div>
     </div>
   </div>
 </section>
@@ -1141,25 +1140,28 @@ function submitInquiry(event) {
   var product = form.querySelector('[name="product"]').value || 'N/A';
   var msg = form.querySelector('[name="message"]').value || 'N/A';
 
+  var subject = encodeURIComponent('Nouvelle demande du site AUREN - ' + name);
+  var body = encodeURIComponent(
+    'Nom: ' + name + '\n' +
+    'E-mail: ' + email + '\n' +
+    'Société: ' + company + '\n' +
+    'Produit d\'intérêt: ' + product + '\n' +
+    'Message:\n' + msg
+  );
+  var mailtoUrl = 'mailto:hello@aurenintimates.com?subject=' + subject + '&body=' + body;
+
   var status = document.getElementById('formStatus');
   status.style.display = 'block';
   status.style.background = '#d4edda';
   status.style.color = '#155724';
-  status.innerHTML = '<strong>Merci beaucoup ' + name + '!</strong><br>Votre demande a été envoyée avec succès.<br>Nous répondrons à <strong>' + email + '</strong> dans les 24 heures.';
+  status.innerHTML =
+    '<strong>Merci beaucoup ' + name + '!</strong><br>' +
+    'Votre demande a été envoyée avec succès.<br>' +
+    'Nous répondrons à <strong>' + email + '</strong> dans les 24 heures.<br><br>' +
+    '<a href="' + mailtoUrl + '" style="display:inline-block;background:#c9a96e;color:#fff;padding:12px 28px;border-radius:6px;text-decoration:none;font-weight:600;font-size:1rem;">📧 Ouvrir l\'Email</a>' +
+    '<br><br><small style="color:#666;">Cliquez sur le bouton pour ouvrir votre application email.</small>';
 
   form.reset();
-
-  setTimeout(function() {
-    var subject = encodeURIComponent('Nouvelle demande du site AUREN - ' + name);
-    var body = encodeURIComponent(
-      'Nom: ' + name + '\n' +
-      'E-mail: ' + email + '\n' +
-      'Société: ' + company + '\n' +
-      'Produit d\'intérêt: ' + product + '\n' +
-      'Message:\n' + msg
-    );
-    window.location.href = 'mailto:hello@aurenintimates.com?subject=' + subject + '&body=' + body;
-  }, 800);
 }
 </script>
 
