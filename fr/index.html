@@ -1140,26 +1140,73 @@ function submitInquiry(event) {
   var product = form.querySelector('[name="product"]').value || 'N/A';
   var msg = form.querySelector('[name="message"]').value || 'N/A';
 
-  var subject = encodeURIComponent('Nouvelle demande du site AUREN - ' + name);
-  var body = encodeURIComponent(
+  var subjectRaw = 'Nouvelle demande du site AUREN - ' + name;
+  var bodyRaw =
     'Nom: ' + name + '\n' +
     'E-mail: ' + email + '\n' +
     'Société: ' + company + '\n' +
     'Produit d\'intérêt: ' + product + '\n' +
-    'Message:\n' + msg
-  );
+    'Message:\n' + msg;
+
+  var subject = encodeURIComponent(subjectRaw);
+  var body = encodeURIComponent(bodyRaw);
   var mailtoUrl = 'mailto:hello@aurenintimates.com?subject=' + subject + '&body=' + body;
+
+  var gmailUrl = 'https://mail.google.com/mail/?view=cm&to=hello@aurenintimates.com&su=' + subject + '&body=' + body;
+  var outlookUrl = 'https://outlook.live.com/mail/0/deepcompose/?to=hello@aurenintimates.com&subject=' + subject + '&body=' + body;
 
   var status = document.getElementById('formStatus');
   status.style.display = 'block';
   status.style.background = '#d4edda';
   status.style.color = '#155724';
   status.innerHTML =
-    '<strong>Merci beaucoup ' + name + '!</strong><br>' +
-    'Votre demande a été envoyée avec succès.<br>' +
-    'Nous répondrons à <strong>' + email + '</strong> dans les 24 heures.<br><br>' +
-    '<a href="' + mailtoUrl + '" style="display:inline-block;background:#c9a96e;color:#fff;padding:12px 28px;border-radius:6px;text-decoration:none;font-weight:600;font-size:1rem;">📧 Ouvrir l\'Email</a>' +
-    '<br><br><small style="color:#666;">Cliquez sur le bouton pour ouvrir votre application email.</small>';
+    '<div style="text-align:left; margin-bottom:1rem;">' +
+    '<strong style="font-size:1.05rem;">Merci, ' + name + '! ✅</strong><br>' +
+    '<span style="font-size:0.95rem;">Votre demande a été envoyée avec succès.<br>' +
+    'Nous répondrons à <strong>' + email + '</strong> dans les 24 heures.</span>' +
+    '</div>' +
+
+    '<div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:1rem;">' +
+    '<a href="' + mailtoUrl + '" style="flex:1;min-width:140px;display:inline-block;background:#c9a96e;color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.92rem;text-align:center;">📧 Ouvrir Email</a>' +
+    '<a href="' + gmailUrl + '" target="_blank" rel="noopener" style="flex:1;min-width:140px;display:inline-block;background:#ea4335;color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.92rem;text-align:center;">Gmail</a>' +
+    '<a href="' + outlookUrl + '" target="_blank" rel="noopener" style="flex:1;min-width:140px;display:inline-block;background:#0078d4;color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.92rem;text-align:center;">Outlook</a>' +
+    '</div>' +
+
+    '<div style="background:#fff;border:1px solid #c3e6cb;border-radius:6px;padding:12px;">' +
+    '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">' +
+    '<strong style="font-size:0.85rem;color:#155724;">📋 Ou copiez et envoyez manuellement :</strong>' +
+    '<button onclick="copyInquiry()" id="copyBtn" style="background:#28a745;color:#fff;border:none;padding:4px 14px;border-radius:4px;font-size:0.82rem;font-weight:600;cursor:pointer;">Copier</button>' +
+    '</div>' +
+    '<pre id="inquiryText" style="margin:0;font-size:0.82rem;color:#333;line-height:1.6;white-space:pre-wrap;word-break:break-word;font-family:monospace;"></pre>' +
+    '</div>';
+
+  document.getElementById('inquiryText').textContent = bodyRaw;
+  window._inquiryText = bodyRaw;
+
+  form.reset();
+}
+
+function escapeHtml(text) {
+  return text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function copyInquiry() {
+  if (!window._inquiryText) return;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(window._inquiryText).then(function() {
+      var btn = document.getElementById('copyBtn');
+      btn.textContent = 'Copié! ✓'; btn.style.background = '#17a2b8';
+      setTimeout(function() { btn.textContent = 'Copier'; btn.style.background = '#28a745'; }, 2000);
+    });
+  } else {
+    var ta = document.createElement('textarea'); ta.value = window._inquiryText;
+    ta.style.position = 'fixed'; ta.style.left = '-9999px';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+    var btn = document.getElementById('copyBtn');
+    btn.textContent = 'Copié! ✓'; btn.style.background = '#17a2b8';
+    setTimeout(function() { btn.textContent = 'Copier'; btn.style.background = '#28a745'; }, 2000);
+  }
+}
 
   form.reset();
 }
