@@ -1121,26 +1121,45 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
   if (e.target === this || e.target.id === 'lb-img') closeLightbox();
 });
 
-// ===== Inquiry Form - Mailto Fallback =====)
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      statusDiv.style.background = '#d4edda';
-      statusDiv.style.color = '#155724';
-      statusDiv.innerHTML = '✅ Thank you! Your inquiry has been sent.<br>We'll reply within 24 hours.';
-      form.reset();
-    } else {
-      statusDiv.style.background = '#f8d7da';
-      statusDiv.style.color = '#721c24';
-      statusDiv.innerHTML = '❌ Sorry, there was an error. Please email us directly at<br>hello@aurenintimates.com';
-    }
-  })
-  .catch(error => {
-    statusDiv.style.background = '#f8d7da';
-    statusDiv.style.color = '#721c24';
-    statusDiv.innerHTML = '❌ Network error. Please email us at<br>hello@aurenintimates.com';
-  });
-}, 1500);
+// ===== Mobile Menu =====
+function toggleMenu() {
+  var links = document.getElementById('navLinks');
+  if (links) links.classList.toggle('active');
+}
+function closeMenu() {
+  var links = document.getElementById('navLinks');
+  if (links) links.classList.remove('active');
+}
+
+// ===== Inquiry Form =====
+function submitInquiry(event) {
+  event.preventDefault();
+  var form = event.target;
+  var name = form.querySelector('[name="name"]').value;
+  var email = form.querySelector('[name="email"]').value;
+  var company = form.querySelector('[name="company"]').value || 'N/A';
+  var product = form.querySelector('[name="product"]').value || 'N/A';
+  var msg = form.querySelector('[name="message"]').value || 'N/A';
+
+  var status = document.getElementById('formStatus');
+  status.style.display = 'block';
+  status.style.background = '#d4edda';
+  status.style.color = '#155724';
+  status.innerHTML = '<strong>Grazie mille ' + name + '!</strong><br>La tua richiesta è stata inviata con successo.<br>Risponderemo a <strong>' + email + '</strong> entro 24 ore.';
+
+  form.reset();
+
+  setTimeout(function() {
+    var subject = encodeURIComponent('Nuova richiesta dal sito AUREN - ' + name);
+    var body = encodeURIComponent(
+      'Nome: ' + name + '\n' +
+      'E-mail: ' + email + '\n' +
+      'Azienda: ' + company + '\n' +
+      'Prodotto di interesse: ' + product + '\n' +
+      'Messaggio:\n' + msg
+    );
+    window.location.href = 'mailto:hello@aurenintimates.com?subject=' + subject + '&body=' + body;
+  }, 800);
 }
 </script>
 
