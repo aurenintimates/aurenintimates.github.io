@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUREN | Modern Intimates for Men — OEM/ODM Manufacturer</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #000000;
+  color: #d0d0d0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ========== NAV ========== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(13,13,13,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+}
+nav .logo { font-size: 1.1rem; font-weight: 600; letter-spacing: 0.05em; color: #c9a96e; }
+nav .links { display: flex; gap: 2rem; list-style: none; }
+nav .links a {
+  color: #ccc; text-decoration: none; font-size: 0.85rem;
+  text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s;
+}
+nav .links a:hover { color: #c9a96e; }
+
+/* ========== HERO ========== */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  padding: 6rem 2rem 4rem;
+  background: radial-gradient(ellipse at 50% 40%, rgba(201,169,110,0.12) 0%, #0d0d0d 70%);
+}
+.hero .badge {
+  display: inline-block; border: 1px solid rgba(201,169,110,0.5);
+  color: #b8953a; padding: 0.35rem 1.2rem; border-radius: 50px;
+  font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 2rem; background: rgba(201,169,110,0.06);
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300;
+  letter-spacing: 0.03em; line-height: 1.15; max-width: 750px;
+  color: #f5f5f5;
+}
+.hero h1 span { color: #c9a96e; font-weight: 400; }
+.hero .sub {
+  margin-top: 1.2rem; color: #999; font-size: 1.05rem;
+  max-width: 520px; letter-spacing: 0.02em;
+}
+.hero .cta-group .btn {
+.hero .cta-group { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.hero .cta-group .btn {
+  padding: 0.75rem 2rem; border-radius: 4px;
+  font-size: 0.9rem; text-decoration: none; letter-spacing: 0.04em;
+  transition: all 0.25s;
+}
+.btn-primary { background: #c9a96e; color: #0d0d0d; border: none; font-weight: 600; }
+.btn-primary:hover { background: #dbb87a; transform: translateY(-1px); }
+.btn-outline { border: 1px solid rgba(255,255,255,0.15); color: #ccc; background: transparent; }
+.btn-outline:hover { border-color: #c9a96e; color: #c9a96e; }
+
+/* ========== SECTIONS ========== */
+.section {
+  max-width: 1100px; margin: 0 auto; padding: 5rem 2rem;
+}
+.section-label {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.18em;
+  color: #c9a96e; margin-bottom: 0.6rem;
+}
+.section h2 {
+  font-size: 2rem; font-weight: 300; letter-spacing: 0.03em;
+  color: #f0f0f0; margin-bottom: 2.5rem;
+}
+/* Section Box */
+.section-box {
+  background: #111111;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* ========== BRAND STORY ========== */
+.brand-story { max-width: 720px; }
+.brand-quote {
+  font-size: 1.35rem; font-style: italic; font-weight: 300;
+  color: #c9a96e; line-height: 1.7; margin-bottom: 1.2rem;
+  padding-left: 1.5rem; border-left: 2px solid rgba(201,169,110,0.3);
+}
+.brand-body {
+  font-size: 0.95rem; color: #999; line-height: 1.85;
+  margin-bottom: 0.8rem;
+}
+
+/* ========== WHY US / FEATURES ========== */
+.features {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem; margin-top: 1rem;
+}
+.feature-item {
+  padding: 2rem 1.5rem; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px; transition: border-color 0.3s;
+  background: #222;
+}
+.feature-item:hover { border-color: rgba(201,169,110,0.4); }
+.feature-item .icon { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
+.feature-item h4 { font-size: 1rem; margin-bottom: 0.6rem; color: #f5f5f5; font-weight: 500; }
+.feature-item p { font-size: 0.85rem; color: #999; line-height: 1.7; }
+
+/* ========== PRODUCTS ========== */
+.product-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .product-grid { grid-template-columns: 1fr; } }
+.product-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px; overflow: hidden;
+  background: #1a1a1a;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.product-card:hover { border-color: rgba(201,169,110,0.4); box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-3px); }
+.product-card img {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+/* Image Switcher */
+.img-switcher {
+  position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.img-switcher img {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0; transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.img-switcher img.active { opacity: 1; pointer-events: auto; }
+.switcher-dots {
+  position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 6px; z-index: 5;
+}
+.switcher-dots .dot {
+  width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.3);
+  cursor: pointer; transition: background 0.3s, transform 0.3s;
+}
+.switcher-dots .dot:hover { background: rgba(255,255,255,0.6); transform: scale(1.2); }
+.switcher-dots .dot.active { background: #c9a96e; transform: scale(1.2); }
+.product-card .info { padding: 1rem 1rem 1.2rem; }
+.product-card .info .code {
+  font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em;
+  color: #c9a96e; margin-bottom: 0.3rem;
+}
+.product-card .info h3 { font-size: 0.95rem; font-weight: 500; color: #f5f5f5; margin-bottom: 0.4rem; }
+.product-card .info .desc { font-size: 0.78rem; color: #999; line-height: 1.6; margin-bottom: 0.7rem; }
+.product-card .info .specs {
+  display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.7rem;
+}
+.product-card .info .specs span {
+  font-size: 0.68rem; color: #aaa;
+  background: rgba(255,255,255,0.05); padding: 0.2rem 0.5rem;
+  border-radius: 3px; border: 1px solid rgba(255,255,255,0.08);
+}
+.product-card .info .colors {
+  display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.8rem;
+}
+.product-card .info .colors .dot {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.product-card .info .moq {
+  font-size: 0.8rem; color: #c9a96e; font-weight: 500;
+}
+
+/* ========== SIZE CHART ========== */
+.size-section { background: #111; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.table-wrapper { overflow-x: auto; margin-top: 1.5rem; }
+table {
+  width: 100%; border-collapse: collapse; min-width: 700px;
+  margin-bottom: 3rem;
+}
+table:last-child { margin-bottom: 0; }
+table caption {
+  text-align: left; font-size: 1.05rem; color: #c9a96e;
+  font-weight: 400; margin-bottom: 1rem; letter-spacing: 0.03em;
+}
+thead th {
+  background: #c9a96e; color: #0d0d0d; padding: 0.7rem 1.2rem;
+  font-size: 0.82rem; font-weight: 600; text-align: center;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+tbody td {
+  padding: 0.7rem 1.2rem; text-align: center; font-size: 0.9rem;
+  color: #ccc; border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+tbody tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+tbody tr:hover { background: rgba(201,169,110,0.1); }
+.table-note {
+  font-size: 0.78rem; color: #999; margin-top: 1.5rem;
+  font-style: italic; line-height: 1.8;
+}
+
+/* ========== CONTACT ========== */
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
+}
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-info .item { margin-bottom: 1.5rem; }
+.contact-info .item .label {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+  color: #c9a96e; margin-bottom: 0.3rem;
+}
+.contact-info .item .value { font-size: 1rem; color: #f5f5f5; }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.contact-form input, .contact-form textarea {
+  width: 100%; padding: 0.8rem 1rem; background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 4px;
+  color: #f5f5f5; font-size: 0.9rem; font-family: inherit;
+  transition: border-color 0.25s;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none; border-color: #c9a96e;
+}
+.contact-form textarea { min-height: 120px; resize: vertical; }
+.contact-form button {
+  align-self: flex-start; padding: 0.75rem 2.2rem;
+  background: #c9a96e; color: #0d0d0d; border: none;
+  border-radius: 4px; font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; letter-spacing: 0.04em; transition: background 0.25s;
+}
+.contact-form button:hover { background: #dbb87a; }
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center; padding: 2.5rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #999; font-size: 0.8rem;
+}
+
+/* ========== DIVIDER ========== */
+.divider {
+  width: 60px; height: 2px; background: #c9a96e;
+  margin: 0 auto 2.5rem; opacity: 0.4;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="logo">AUREN</div>
+  <ul class="links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#sizes">Size Chart</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="badge">OEM / ODM · Private Label · Worldwide Shipping · Min. 100 pcs/color</div>
+  <h1><span>AUREN</span> — Modern Intimates<br>for the Modern Man</h1>
+  <p class="sub">
+    Premium men's lace underwear crafted with water-soluble floral lace,
+    <br>3D ergonomic pouch, and ice-silk cooling fabric.
+    <br>Your brand, our craft — private label ready.
+  </p>
+  <div class="cta-group">
+    <a href="#products" class="btn btn-primary">Explore Collection</a>
+    <a href="#contact" class="btn btn-outline">Request Quote</a>
+  </div>
+</section>
+
+<!-- ===== BRAND STORY ===== -->
+<section class="section section-box" id="about">
+  <div class="section-label">Our Story</div>
+  <h2>AUREN</h2>
+  <div class="divider" style="margin-left:0;"></div>
+  
+  <div class="brand-story">
+    <p class="brand-quote">Every man deserves to feel confident, comfortable, and completely himself.</p>
+    <p class="brand-body">AUREN was born from a simple belief: that intimate apparel should celebrate who you are, not confine you to who the world expects you to be. We challenge outdated ideas of masculinity by creating pieces that combine elegance, comfort, and modern design.</p>
+    <p class="brand-body">Our mission is not to change who you are. It is to help you express it.</p>
+    <p class="brand-body" style="margin-top:1.5rem; color:#c9a96e; font-weight:500;">We are a B2B manufacturing partner specializing in men's lace intimates. We help international brands and retailers worldwide bring their vision to life through OEM and ODM production — your brand, your packaging, your story. We handle the craft.</p>
+  </div>
+
+  <div class="features" style="margin-top: 3.5rem;">
+    <div class="feature-item">
+      <span class="icon">🧵</span>
+      <h4>Water-Soluble Lace</h4>
+      <p>Premium floral lace that is soft, breathable, and machine-washable. Sourced from certified textile mills.</p>
+    </div>
+    <div class="feature-item">
+      <span class="icon">🔬</span>
+      <h4>3D Ergonomic Pouch</h4>
+      <p>3D-molded front pouch for superior comfort and support. Anatomically designed for all-day wear.</p>
+    </div>
+    <div class="feature-item">
+      <span class="icon">❄️</span>
+      <h4>Ice-Silk Cooling</h4>
+      <p>Advanced cooling fabric technology. Moisture-wicking, breathable, and ideal for warm climates.</p>
+    </div>
+    <div class="feature-item">
+      <span class="icon">📦</span>
+      <h4>Private Label Ready</h4>
+      <p>100 pcs per color per style. Your brand, your packaging, your story — we handle the rest.</p>
+    </div>
+  </div>
+
+  <!-- ===== HOW WE PARTNER ===== -->
+  <div style="margin-top: 4rem;">
+    <div class="section-label">How We Partner</div>
+    <h2>OEM / ODM / Private Label</h2>
+    <div class="divider" style="margin-left:0;"></div>
+
+    <div class="features" style="margin-top:1rem;">
+      <div class="feature-item">
+        <span class="icon">🏭</span>
+        <h4>OEM Production</h4>
+        <p>You provide the designs and specifications. We manufacture to your exact requirements with your branding — logo, hangtags, packaging.</p>
+      </div>
+      <div class="feature-item">
+        <span class="icon">🎨</span>
+        <h4>ODM Customization</h4>
+        <p>Choose from our existing designs and customize fabrics, colors, trims, and packaging to match your brand identity.</p>
+      </div>
+      <div class="feature-item">
+        <span class="icon">🏷️</span>
+        <h4>Private Label</h4>
+        <p>Full white-label service. Your brand name on every piece. We never sell under the AUREN label — your customers are yours alone.</p>
+      </div>
+      <div class="feature-item">
+        <span class="icon">🌍</span>
+        <h4>Global Shipping</h4>
+        <p>We ship worldwide — Europe, North America, Middle East, Southeast Asia, Australia. FOB/CIF/DDP available. Fast, reliable logistics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="section section-box" id="products">
+  <div class="section-label">The Collection</div>
+  <h2>Four Signature Styles</h2>
+  <div class="divider" style="margin-left:0;"></div>
+  
+  <div class="product-grid">
+
+    <!-- Product 9802 -->
+    <div class="product-card">
+      <div class="img-switcher">
+        <img src="images/product_9802_1.jpg" class="active" alt="9802 — All Colors" loading="lazy">
+        <img src="images/product_9802.jpg" alt="9802 — Front" loading="lazy">
+        <img src="images/product_9802_2.jpg" alt="9802 — Fabric Detail" loading="lazy">
+        <img src="images/product_9802_3.jpg" alt="9802 — Lace Texture" loading="lazy">
+        <img src="images/product_9802_4.jpg" alt="9802 — On Mannequin" loading="lazy">
+        <div class="switcher-dots">
+          <span class="dot active" onclick="switchImg(this,0)"></span>
+          <span class="dot" onclick="switchImg(this,1)"></span>
+          <span class="dot" onclick="switchImg(this,2)"></span>
+          <span class="dot" onclick="switchImg(this,3)"></span>
+          <span class="dot" onclick="switchImg(this,4)"></span>
+        </div>
+      </div>
+      <div class="info">
+        <div class="code">Style #9802</div>
+        <h3>Lace Mesh Briefs · Low Rise</h3>
+        <p class="desc">Classic low-rise briefs crafted from water-soluble floral lace. 3D contour front panel. Ultra-soft, breathable, and machine-washable.</p>
+        <div class="specs">
+          <span>68% Nylon</span><span>32% Spandex</span><span>Low Rise</span>
+        </div>
+        <div class="colors">
+          <span class="dot" style="background:#f5f0e8;" title="White"></span>
+          <span class="dot" style="background:#e8c9a0;" title="Skin"></span>
+          <span class="dot" style="background:#f0b8c8;" title="Pink"></span>
+          <span class="dot" style="background:#7b5ea7;" title="Purple"></span>
+          <span class="dot" style="background:#1a1a1a;" title="Black"></span>
+        </div>
+        <div class="moq">MOQ: 100 pcs/color · Sizes: S / M / L</div>
+      </div>
+    </div>
+
+    <!-- Product 9803 -->
+    <div class="product-card">
+      <div class="img-switcher">
+        <img src="images/product_9803_1.jpg" class="active" alt="9803 — All Colors" loading="lazy">
+        <img src="images/product_9803_2.jpg" alt="9803 — Front View" loading="lazy">
+        <img src="images/product_9803_3.jpg" alt="9803 — Side Detail" loading="lazy">
+        <img src="images/product_9803_4.jpg" alt="9803 — Fabric Detail" loading="lazy">
+        <img src="images/product_9803_5.jpg" alt="9803 — On Mannequin" loading="lazy">
+        <div class="switcher-dots">
+          <span class="dot active" onclick="switchImg(this,0)"></span>
+          <span class="dot" onclick="switchImg(this,1)"></span>
+          <span class="dot" onclick="switchImg(this,2)"></span>
+          <span class="dot" onclick="switchImg(this,3)"></span>
+          <span class="dot" onclick="switchImg(this,4)"></span>
+        </div>
+      </div>
+      <div class="info">
+        <div class="code">Style #9803</div>
+        <h3>Lace Mesh Briefs · Mid Rise</h3>
+        <p class="desc">Mid-rise lace briefs with satin center panel and floral lace sides. Sophisticated two-tone design. Machine-washable water-soluble lace.</p>
+        <div class="specs">
+          <span>68% Nylon</span><span>32% Spandex</span><span>Mid Rise</span>
+        </div>
+        <div class="colors">
+          <span class="dot" style="background:#f5f0e8;" title="White"></span>
+          <span class="dot" style="background:#e8c9a0;" title="Skin"></span>
+          <span class="dot" style="background:#c0c0c0;" title="Silver Gray"></span>
+          <span class="dot" style="background:#6b4e3d;" title="Coffee"></span>
+          <span class="dot" style="background:#2d4a2e;" title="Dark Green"></span>
+          <span class="dot" style="background:#1a1a1a;" title="Black"></span>
+        </div>
+        <div class="moq">MOQ: 100 pcs/color · Sizes: S / M / L / XL</div>
+      </div>
+    </div>
+
+    <!-- Product 9815 -->
+    <div class="product-card">
+      <div class="img-switcher">
+        <img src="images/product_9815_1.jpg" class="active" alt="9815 — Front View" loading="lazy">
+        <img src="images/product_9815_2.jpg" alt="9815 — Side View" loading="lazy">
+        <img src="images/product_9815_3.jpg" alt="9815 — Fabric Detail" loading="lazy">
+        <img src="images/product_9815_4.jpg" alt="9815 — Back View" loading="lazy">
+        <img src="images/product_9815_5.jpg" alt="9815 — On Mannequin" loading="lazy">
+        <img src="images/product_9815_6.jpg" alt="9815 — All Colors" loading="lazy">
+        <div class="switcher-dots">
+          <span class="dot active" onclick="switchImg(this,0)"></span>
+          <span class="dot" onclick="switchImg(this,1)"></span>
+          <span class="dot" onclick="switchImg(this,2)"></span>
+          <span class="dot" onclick="switchImg(this,3)"></span>
+          <span class="dot" onclick="switchImg(this,4)"></span>
+          <span class="dot" onclick="switchImg(this,5)"></span>
+        </div>
+      </div>
+      <div class="info">
+        <div class="code">Style #9815</div>
+        <h3>Lace-Waist Ice-Silk Boxers</h3>
+        <p class="desc">Long-leg boxer briefs with lace waistband and ice-silk body fabric. 3D-molded front pouch. Cooling, breathable, perfect for everyday luxury.</p>
+        <div class="specs">
+          <span>68% Nylon</span><span>32% Spandex</span><span>High Waist</span><span>Ice-Silk</span>
+        </div>
+        <div class="colors">
+          <span class="dot" style="background:#e8c9a0;" title="Skin"></span>
+          <span class="dot" style="background:#6baed6;" title="Blue"></span>
+          <span class="dot" style="background:#f0b8c8;" title="Pink"></span>
+          <span class="dot" style="background:#f5f0e8;" title="White"></span>
+          <span class="dot" style="background:#6b4e3d;" title="Coffee"></span>
+          <span class="dot" style="background:#1a1a1a;" title="Black"></span>
+        </div>
+        <div class="moq">MOQ: 100 pcs/color · Sizes: S / M / L</div>
+      </div>
+    </div>
+
+    <!-- Product 9889 -->
+    <div class="product-card">
+      <div class="img-switcher">
+        <img src="images/product_9889_1.jpg" class="active" alt="9889 — Front View" loading="lazy">
+        <img src="images/product_9889_2.jpg" alt="9889 — Side View" loading="lazy">
+        <img src="images/product_9889_3.jpg" alt="9889 — Fabric Detail" loading="lazy">
+        <img src="images/product_9889_4.jpg" alt="9889 — Back View" loading="lazy">
+        <img src="images/product_9889_5.jpg" alt="9889 — On Mannequin" loading="lazy">
+        <img src="images/product_9889_6.jpg" alt="9889 — All Colors" loading="lazy">
+        <div class="switcher-dots">
+          <span class="dot active" onclick="switchImg(this,0)"></span>
+          <span class="dot" onclick="switchImg(this,1)"></span>
+          <span class="dot" onclick="switchImg(this,2)"></span>
+          <span class="dot" onclick="switchImg(this,3)"></span>
+          <span class="dot" onclick="switchImg(this,4)"></span>
+          <span class="dot" onclick="switchImg(this,5)"></span>
+        </div>
+      </div>
+      <div class="info">
+        <div class="code">Style #9889</div>
+        <h3>Lace & Ice-Silk Briefs · Mid Rise</h3>
+        <p class="desc">Mid-rise briefs combining scalloped lace with cooling ice-silk fabric. 3D-molded pouch. The perfect blend of elegance and performance.</p>
+        <div class="specs">
+          <span>72.1% Nylon</span><span>27.9% Spandex</span><span>Mid Rise</span><span>Ice-Silk</span>
+        </div>
+        <div class="colors">
+          <span class="dot" style="background:#4a7c59;" title="Green"></span>
+          <span class="dot" style="background:#e8c9a0;" title="Skin"></span>
+          <span class="dot" style="background:#6b4e3d;" title="Coffee"></span>
+          <span class="dot" style="background:#1a1a1a;" title="Black"></span>
+          <span class="dot" style="background:#c0392b;" title="Red"></span>
+          <span class="dot" style="background:#f0b8c8;" title="Pink"></span>
+        </div>
+        <div class="moq">MOQ: 100 pcs/color · Sizes: S / M / L / XL</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SIZE CHARTS ===== -->
+<section class="size-section" id="sizes">
+  <div class="section">
+    <div class="section-label">Size Guide</div>
+    <h2>Find the Perfect Fit</h2>
+    <div class="divider" style="margin-left:0;"></div>
+
+    <div class="table-wrapper">
+      <table>
+        <caption>Low Rise Styles — 9802 / 9815</caption>
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Waist Relaxed</th>
+            <th>Waist Stretched</th>
+            <th>Fits Waist (inch)</th>
+            <th>Fits Waist (cm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>S</strong></td>
+            <td>29 cm / 11.4″</td>
+            <td>48 cm / 18.9″</td>
+            <td>28 − 36″</td>
+            <td>71 − 91 cm</td>
+          </tr>
+          <tr>
+            <td><strong>M</strong></td>
+            <td>31 cm / 12.2″</td>
+            <td>53 cm / 20.9″</td>
+            <td>30 − 38″</td>
+            <td>76 − 97 cm</td>
+          </tr>
+          <tr>
+            <td><strong>L</strong></td>
+            <td>33 cm / 13.0″</td>
+            <td>58 cm / 22.8″</td>
+            <td>32 − 41″</td>
+            <td>81 − 104 cm</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <caption>Mid Rise Styles — 9803 / 9889</caption>
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Waist Relaxed</th>
+            <th>Waist Stretched</th>
+            <th>Fits Waist (inch)</th>
+            <th>Fits Waist (cm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>S</strong></td>
+            <td>32 cm / 12.6″</td>
+            <td>45 cm / 17.7″</td>
+            <td>27.6 − 35.4″</td>
+            <td>70 − 90 cm</td>
+          </tr>
+          <tr>
+            <td><strong>M</strong></td>
+            <td>34 cm / 13.4″</td>
+            <td>50 cm / 19.7″</td>
+            <td>30.2 − 38.1″</td>
+            <td>77 − 97 cm</td>
+          </tr>
+          <tr>
+            <td><strong>L</strong></td>
+            <td>36 cm / 14.2″</td>
+            <td>55 cm / 21.7″</td>
+            <td>32.8 − 40.7″</td>
+            <td>83 − 103 cm</td>
+          </tr>
+          <tr>
+            <td><strong>XL</strong></td>
+            <td>38 cm / 15.0″</td>
+            <td>60 cm / 23.6″</td>
+            <td>35.4 − 43.3″</td>
+            <td>90 − 110 cm</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="table-note">
+      <strong>How to measure:</strong> Lay your existing underwear flat without stretching. Measure across the waistband and compare to the "Waist Relaxed" column. Choose the size where your measurement falls within the stretch range. All measurements are approximate (±1−2 cm tolerance). Colors may vary slightly from photos due to monitor settings.
+    </p>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section section-box" id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2>Let's Build Your<br>Collection Together</h2>
+  <div class="divider" style="margin-left:0;"></div>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="item">
+        <div class="label">Email</div>
+        <div class="value">hello@aurenintimates.com</div>
+      </div>
+      <div class="item">
+        <div class="label">Location</div>
+        <div class="value">China · Shipping Worldwide</div>
+      </div>
+      <div class="item">
+        <div class="label">Minimum Order</div>
+        <div class="value">100 pcs per color per style</div>
+      </div>
+      <div class="item">
+        <div class="label">Lead Time</div>
+        <div class="value">15−25 days (depending on quantity)</div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="alert('Thank you! We will get back to you within 24 hours.'); return false;">
+      <input type="text" placeholder="Your Name / Brand" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Tell us about your project — styles, quantity, custom requirements..." required></textarea>
+      <button type="submit">Send Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>&copy; 2026 AUREN. All rights reserved. | Modern Intimates for Men | B2B OEM/ODM Manufacturing | Serving Brands Worldwide</p>
+</footer>
+
+<script>
+function switchImg(dot, idx) {
+  const switcher = dot.parentElement.parentElement;
+  const imgs = switcher.querySelectorAll('img');
+  const dots = switcher.querySelectorAll('.dot');
+  imgs.forEach(i => i.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+  imgs[idx].classList.add('active');
+  dots[idx].classList.add('active');
+}
+</script>
+</body>
+</html>
