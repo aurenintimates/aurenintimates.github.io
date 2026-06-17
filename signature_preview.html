@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUREN Email Signature · 邮件签名模板</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    background: #1a1a1a; color: #ccc; font-family: 'Calibri','Segoe UI',Arial,sans-serif;
+    display: flex; justify-content: center; padding: 40px 20px;
+  }
+  .container { max-width: 700px; width: 100%; }
+  h1 { font-size: 18px; color: #c9a96e; margin-bottom: 6px; }
+  .sub { font-size: 12px; color: #777; margin-bottom: 24px; }
+  
+  .card {
+    background: #fff; border-radius: 10px; padding: 24px 28px; margin-bottom: 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+    color: #999; margin-bottom: 14px;
+  }
+
+  /* ===== HTML 签名样式 ===== */
+  .sig-html { font-family: 'Calibri','Segoe UI',Arial,sans-serif; max-width: 500px; color: #333; line-height: 1.6; }
+  .sig-logo { font-family: Georgia,'Times New Roman',serif; font-size: 22px; font-weight: bold; color: #c9a96e; letter-spacing: 4px; }
+  .sig-tagline { font-size: 11px; color: #999; margin-left: 8px; vertical-align: middle; }
+  .sig-name { font-size: 13px; padding: 2px 0; }
+  .sig-name strong { color: #222; }
+  .sig-title { font-size: 13px; padding: 2px 0; color: #666; }
+  .sig-contact { font-size: 13px; padding: 6px 0 2px 0; color: #444; }
+  .sig-contact a { color: #444; text-decoration: none; }
+  .sig-footer { font-size: 11px; padding: 4px 0 0 0; color: #999; }
+
+  .sig-divider {
+    display: inline-block; border-bottom: 2px solid #c9a96e; padding-bottom: 8px; margin-bottom: 8px;
+  }
+
+  /* ===== TXT 签名样式 ===== */
+  .sig-txt {
+    font-family: 'Consolas','Courier New',monospace; font-size: 13px; color: #444;
+    white-space: pre-line; line-height: 1.5;
+    background: #fafafa; padding: 16px; border-radius: 6px; border: 1px solid #e0e0e0;
+  }
+
+  .copy-btn {
+    display: inline-block; margin-top: 12px; padding: 6px 18px;
+    background: #c9a96e; color: #fff; border: none; border-radius: 4px;
+    font-size: 12px; cursor: pointer; transition: background 0.2s;
+  }
+  .copy-btn:hover { background: #b8953c; }
+  .copied { background: #4caf50 !important; }
+
+  .note {
+    font-size: 11px; color: #888; margin-top: 8px; line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>AUREN 邮件签名模板</h1>
+  <p class="sub">选一个版本 → 复制 → 粘贴到腾讯企业邮签名设置</p>
+
+  <!-- ===== HTML 版 ===== -->
+  <div class="card">
+    <div class="card-label">🥇 HTML 签名（推荐 · 富文本 · 有格式）</div>
+
+    <!-- 预览 -->
+    <div style="border: 1px dashed #ddd; padding: 20px; border-radius: 6px; margin-bottom: 14px;">
+      <div class="sig-html">
+        <div class="sig-divider">
+          <span class="sig-logo">AUREN</span>
+          <span class="sig-tagline">Modern Intimates for Men</span>
+        </div>
+        <div class="sig-name"><strong>Elina Lian</strong></div>
+        <div class="sig-title">Founder &amp; Business Director</div>
+        <div class="sig-contact">
+          ✉ <a href="mailto:hello@aurenintimates.com">hello@aurenintimates.com</a>
+          &nbsp;|&nbsp;
+          🌐 <a href="https://aurenintimates.com">aurenintimates.com</a>
+        </div>
+        <div class="sig-footer">OEM / ODM · Private Label · Worldwide Shipping</div>
+      </div>
+    </div>
+
+    <p style="font-size: 11px; color: #888; margin-bottom: 8px;">▼ 复制下方代码，粘贴到腾讯企业邮签名编辑器</p>
+    <textarea readonly style="width:100%; height:140px; font-size:11px; font-family: monospace; padding:10px; border-radius:4px; border:1px solid #ddd; background:#fafafa; resize:vertical;" id="htmlCode">
+<div style="font-family: 'Calibri','Segoe UI',Arial,sans-serif; max-width:500px; color:#333; line-height:1.6;">
+<div style="display:inline-block; border-bottom:2px solid #c9a96e; padding-bottom:8px; margin-bottom:6px;">
+<span style="font-family: Georgia,'Times New Roman',serif; font-size:22px; font-weight:bold; color:#c9a96e; letter-spacing:4px;">AUREN</span>
+<span style="font-size:11px; color:#999; margin-left:8px; vertical-align:middle;">Modern Intimates for Men</span>
+</div>
+<div style="font-size:13px; padding:2px 0;"><strong style="color:#222;">Elina Lian</strong></div>
+<div style="font-size:13px; padding:2px 0; color:#666;">Founder &amp; Business Director</div>
+<div style="font-size:13px; padding:6px 0 2px 0; color:#444;">
+✉ <a href="mailto:hello@aurenintimates.com" style="color:#444; text-decoration:none;">hello@aurenintimates.com</a>
+&nbsp;|&nbsp;
+🌐 <a href="https://aurenintimates.com" style="color:#444; text-decoration:none;">aurenintimates.com</a>
+</div>
+<div style="font-size:11px; padding:4px 0 0 0; color:#999;">
+OEM / ODM · Private Label · Worldwide Shipping
+</div>
+</div></textarea>
+  </div>
+
+  <!-- ===== TXT 版 ===== -->
+  <div class="card">
+    <div class="card-label">🥈 纯文本签名（备选 · 纯文字 · 兼容所有客户端）</div>
+    <div class="sig-txt" id="txtCode">AUREN | Modern Intimates for Men
+Elina Lian
+Founder &amp; Business Director
+✉ hello@aurenintimates.com
+🌐 aurenintimates.com
+OEM/ODM · Private Label · Worldwide Shipping</div>
+  </div>
+
+  <!-- ===== 使用说明 ===== -->
+  <div class="card" style="background:#2a2218; border:1px solid #c9a96e44;">
+    <div class="card-label" style="color:#c9a96e;">📋 使用说明</div>
+    <div class="note" style="color:#bbb; font-size:12px;">
+      <p><strong>①</strong> 登录 <strong>exmail.qq.com</strong> → 设置 → 签名</p>
+      <p><strong>②</strong> 新建签名 → 粘贴 HTML 版代码（切到源代码/HTML 模式粘贴）</p>
+      <p><strong>③</strong> 设为默认签名 → 保存</p>
+      <p style="margin-top:8px; color:#c9a96e;">⚠️ 腾讯企业邮签名编辑器需切换到源码模式才能正确粘贴 HTML</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
