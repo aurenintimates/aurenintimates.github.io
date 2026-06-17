@@ -980,9 +980,10 @@ footer {
       </div>
     </div>
     <div class="contact-form">
-            <form id="inquiryForm" onsubmit="submitInquiry(event)">
+                  <form action="https://web3forms.com/" method="POST">
         <input type="hidden" name="access_key" value="3327a9a7-28e7-4fcb-9533-9073df5d62a1">
         <input type="hidden" name="_subject" value="🆕 New Inquiry from AUREN Website">
+        <input type="hidden" name="_next" value="https://aurenintimates.github.io/">
         <input type="text" name="name" placeholder="Your Name *" required>
         <input type="email" name="email" placeholder="Your Email *" required>
         <input type="text" name="company" placeholder="Company Name">
@@ -990,6 +991,7 @@ footer {
         <textarea name="message" placeholder="Tell us about your project — quantities, colors, customization needs..." rows="5"></textarea>
         <button type="submit">Send Inquiry</button>
       </form>
+      <div id="formStatus" style="display:none; margin-top:1rem; padding:1rem; border-radius:4px;"></div>
       <div id="formStatus" style="display:none; margin-top:1rem; padding:1rem; border-radius:4px;"></div>
     </div>
   </div>
@@ -1072,24 +1074,7 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
   if (e.target === this || e.target.id === 'lb-img') closeLightbox();
 });
 
-// ===== Inquiry Form - Mailto Fallback =====
-function submitInquiry(event) {
-  event.preventDefault();
-  const form = event.target;
-  const statusDiv = document.getElementById('formStatus');
-  const formData = new FormData(form);
-  
-  // Show loading
-  statusDiv.style.display = 'block';
-  statusDiv.style.background = '#f0f0f0';
-  statusDiv.style.color = '#666';
-  statusDiv.innerHTML = '⏳ Sending your inquiry...';
-  
-  // Submit to Web3Forms via Ajax
-  fetch('https://web3forms.com/', {
-    method: 'POST',
-    body: formData
-  })
+// ===== Inquiry Form - Mailto Fallback =====)
   .then(response => response.json())
   .then(data => {
     if (data.success) {
