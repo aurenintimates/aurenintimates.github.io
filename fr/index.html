@@ -980,13 +980,15 @@ footer {
       </div>
     </div>
     <div class="contact-form">
-      <form id="inquiryForm" onsubmit="submitInquiry(event)">
-        <input type="text" name="name" placeholder="Votre Nom *" required>
-        <input type="email" name="email" placeholder="Votre Email *" required>
-        <input type="text" name="company" placeholder="Nom de l'Entreprise">
+            <form id="inquiryForm" onsubmit="submitInquiry(event)">
+        <input type="hidden" name="access_key" value="3327a9a7-28e7-4fcb-9533-9073df5d62a1">
+        <input type="hidden" name="_subject" value="🆕 New Inquiry from AUREN Website">
+        <input type="text" name="name" placeholder="Your Name *" required>
+        <input type="email" name="email" placeholder="Your Email *" required>
+        <input type="text" name="company" placeholder="Company Name">
         <input type="text" name="product" placeholder="Product Interest (e.g. Style #9802)">
-        <textarea name="message" placeholder="Parlez-nous de votre projet — quantités, couleurs, besoins de personnalisation..." rows="5"></textarea>
-        <button type="submit">Envoyer la Demande</button>
+        <textarea name="message" placeholder="Tell us about your project — quantities, colors, customization needs..." rows="5"></textarea>
+        <button type="submit">Send Inquiry</button>
       </form>
       <div id="formStatus" style="display:none; margin-top:1rem; padding:1rem; border-radius:4px;"></div>
     </div>
@@ -1073,48 +1075,40 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
 // ===== Inquiry Form - Mailto Fallback =====
 function submitInquiry(event) {
   event.preventDefault();
-  
   const form = event.target;
-  const name = form.querySelector('[name="name"]').value;
-  const email = form.querySelector('[name="email"]').value;
-  const company = form.querySelector('[name="company"]').value || 'N/A';
-  const product = form.querySelector('[name="product"]').value || 'N/A';
-  const message = form.querySelector('[name="message"]').value || 'N/A';
-  
   const statusDiv = document.getElementById('formStatus');
-  const submitBtn = form.querySelector('button[type="submit"]');
+  const formData = new FormData(form);
   
   // Show loading
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending...';
   statusDiv.style.display = 'block';
-  statusDiv.style.background = '#f8f8f8';
-  statusDiv.style.color = '#333';
-  statusDiv.textContent = 'Opening your email client...';
+  statusDiv.style.background = '#f0f0f0';
+  statusDiv.style.color = '#666';
+  statusDiv.innerHTML = '⏳ Sending your inquiry...';
   
-  // Build mailto link
-  const subject = encodeURIComponent('New Inquiry from AUREN Website - ' + name);
-  const body = encodeURIComponent(
-    'Name: ' + name + '\n' +
-    'Email: ' + email + '\n' +
-    'Company: ' + company + '\n' +
-    'Product Interest: ' + product + '\n' +
-    'Message:\n' + message + '\n'
-  );
-  const mailtoLink = 'mailto:hello@aurenintimates.com?subject=' + subject + '&body=' + body;
-  
-  // Try to send via mailto
-  window.location.href = mailtoLink;
-  
-  // Show success message
-  setTimeout(() => {
-    statusDiv.style.background = '#d4edda';
-    statusDiv.style.color = '#155724';
-    statusDiv.innerHTML = '✅ <strong>Thank you!</strong> Your email client should open now. If not, please email us directly at <a href="mailto:hello@aurenintimates.com">hello@aurenintimates.com</a>';
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Envoyer la Demande';
-    form.reset();
-  }, 1500);
+  // Submit to Web3Forms via Ajax
+  fetch('https://web3forms.com/', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      statusDiv.style.background = '#d4edda';
+      statusDiv.style.color = '#155724';
+      statusDiv.innerHTML = '✅ Thank you! Your inquiry has been sent.<br>We'll reply within 24 hours.';
+      form.reset();
+    } else {
+      statusDiv.style.background = '#f8d7da';
+      statusDiv.style.color = '#721c24';
+      statusDiv.innerHTML = '❌ Sorry, there was an error. Please email us directly at<br>hello@aurenintimates.com';
+    }
+  })
+  .catch(error => {
+    statusDiv.style.background = '#f8d7da';
+    statusDiv.style.color = '#721c24';
+    statusDiv.innerHTML = '❌ Network error. Please email us at<br>hello@aurenintimates.com';
+  });
+}, 1500);
 }
 </script>
 
