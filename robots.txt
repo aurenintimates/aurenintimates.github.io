@@ -1,12 +1,12 @@
 # robots.txt for AUREN Intimates
-# https://aurenintimates.github.io/
+# https://aurenintimates.com/
 
 # Allow all crawlers
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://aurenintimates.github.io/sitemap.xml
+Sitemap: https://aurenintimates.com/sitemap.xml
 
 # Crawl-delay (optional, be polite to servers)
 # Crawl-delay: 1
